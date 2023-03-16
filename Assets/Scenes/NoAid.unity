@@ -2640,7 +2640,6 @@ GameObject:
   - component: {fileID: 1141460110}
   - component: {fileID: 1141460109}
   - component: {fileID: 1141460112}
-  - component: {fileID: 1141460113}
   m_Layer: 5
   m_Name: Shape
   m_TagString: Untagged
@@ -2775,19 +2774,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   folderPath: Assets/SearchObjects
---- !u!114 &1141460113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1141460106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea2bab239ac5a8344bb507a64b5fce9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetImage: {fileID: 816570977}
 --- !u!1 &1202585215
 GameObject:
   m_ObjectHideFlags: 0
