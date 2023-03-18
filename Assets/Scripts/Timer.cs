@@ -11,6 +11,7 @@ public class Timer : MonoBehaviour
     public float currentTime;
     public Image imageComponent;
     private int counter = 0;
+    private readonly int NUMBER_OF_GUESSES = 10;
     
     // Start is called before the first frame update
     void Start()
@@ -21,11 +22,11 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(counter == 10) {
+        if(counter == NUMBER_OF_GUESSES) {
             
         } else {
-        currentTime = currentTime += Time.deltaTime;
-        timerText.text = currentTime.ToString("0.00");
+            currentTime = currentTime += Time.deltaTime;
+            timerText.text = currentTime.ToString("0.00");
         }
     }
 }
