@@ -7,10 +7,13 @@ public class AudioHandler : MonoBehaviour
     // Start is called before the first frame update
     public AudioSource leftAudioSource;
     public AudioSource rightAudioSource;
+
+    public bool testing = false;
     void Start()
     {
-        StartCoroutine(testSound());
-        
+        if (testing) {
+            StartCoroutine(testSound());
+        }
         
     }
 
@@ -32,5 +35,6 @@ public class AudioHandler : MonoBehaviour
 
     playRightAudio();
     yield return new WaitForSeconds(1);
+     StartCoroutine(testSound());
 }
 }
