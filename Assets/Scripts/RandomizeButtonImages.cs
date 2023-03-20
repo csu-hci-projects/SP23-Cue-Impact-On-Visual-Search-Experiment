@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
+using static Timer;
 
 public class RandomizeButtonImages : MonoBehaviour
 {
@@ -22,7 +23,8 @@ public class RandomizeButtonImages : MonoBehaviour
     {
         // get all the buttons with an Image component on them
         Image[] images = FindObjectsOfType<Image>();
-        
+                
+
         // iterate through all the buttons
         for (int i = 0; i < images.Length; i++)
         {
@@ -51,5 +53,9 @@ public class RandomizeButtonImages : MonoBehaviour
         Texture2D texture = new Texture2D(1, 1);
         texture.LoadImage(imageData);
         return texture;
+    }
+
+    public void UpdateTimer() {
+        Timer.UpdateCounter();
     }
 }
