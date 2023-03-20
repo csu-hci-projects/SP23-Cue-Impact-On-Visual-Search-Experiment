@@ -13,6 +13,7 @@ public class Timer : MonoBehaviour
     private static int counter = 0;
     private float finalTime;
     private bool doneTiming = false;
+    private readonly int NUMBER_OF_GUESSES = 10;
     
     // Start is called before the first frame update
     void Start()
@@ -28,7 +29,6 @@ public class Timer : MonoBehaviour
             doneTiming = true;
             timerText.text = finalTime.ToString("0.00");
         } else if (!doneTiming) {
-            Debug.Log("Current counter:" + counter);
             currentTime = currentTime += Time.deltaTime;
             timerText.text = currentTime.ToString("0.00");
         }
