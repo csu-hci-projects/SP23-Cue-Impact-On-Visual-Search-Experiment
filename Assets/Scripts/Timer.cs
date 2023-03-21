@@ -24,7 +24,7 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(counter == 10 && !doneTiming) {
+        if(counter == NUMBER_OF_GUESSES && !doneTiming) {
             finalTime = currentTime;
             doneTiming = true;
             timerText.text = finalTime.ToString("0.00");
