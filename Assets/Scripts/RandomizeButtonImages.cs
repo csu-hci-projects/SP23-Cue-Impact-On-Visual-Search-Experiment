@@ -9,8 +9,8 @@ public class RandomizeButtonImages : MonoBehaviour
 {
     public string folderPath;   // path to the folder containing the images
     public ButtonImageCheck ButtonImageCheck;
-
     private string[] imagePaths; // array of all the image paths in the folder
+    public Button thisButton;
     //private int lastIndex = -1;  // index of the last image used
     
     
@@ -18,9 +18,8 @@ public class RandomizeButtonImages : MonoBehaviour
     {
         // get all the image paths in the folder
         imagePaths = Directory.GetFiles(folderPath, "*.png");
-        
         // set the initial images for all the buttons
-        RandomizeImages();
+        //RandomizeImages();
     }
     
     public void RandomizeImages()
@@ -80,14 +79,6 @@ public class RandomizeButtonImages : MonoBehaviour
     }
 
     public void UpdateTimer() {
-
-        if(ButtonImageCheck.CheckImage() == true) {
-            Debug.Log("Images match!");
             Timer.UpdateCounter();
-        } else {
-            Debug.Log("Images don't match.");
-        }
-    
-    
     }
 }
