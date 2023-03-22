@@ -5,19 +5,23 @@ using System;
 using System.Collections.Generic;
 using static Timer;
 
-public class RandomizeButtonImages : MonoBehaviour
+public class RandomizeAudio : MonoBehaviour
 {
     public string folderPath;   // path to the folder containing the images
     public string symbolToFindName;
     public string symbolToFindName2;
+    public AudioSource audioSource;
     private string[] imagePaths; // array of all the image paths in the folder
     public Button thisButton;
     private string imageName;
     public Image image;
+    
+
 
     
     //private int lastIndex = -1;  // index of the last image used
-    
+
+    //Plays the audio of where it was previously
     
     void Start()
     {
@@ -29,10 +33,12 @@ public class RandomizeButtonImages : MonoBehaviour
 
     void Update() {
          imageName = image.sprite.name;
+         
     }
 
     public void RandomizeImages()
     {
+        
         // get all the buttons with an Image component on them
         Image[] images = FindObjectsOfType<Image>();
 
@@ -80,6 +86,7 @@ public class RandomizeButtonImages : MonoBehaviour
                 sprite.name = imagePathName.Substring(imagePathName.LastIndexOf('\\') + 1);
             }
         }
+        //COME BACK TO THIS WHAT WE SHOULD DO IS AFTER THIS CHECK ALL THE BUTTONS AND IF THEY ARE A TRIANGLE PLAY THEIR SOUND!
     }
     
     private Texture2D LoadImage(string path)

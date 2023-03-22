@@ -8,18 +8,27 @@ public class Timer : MonoBehaviour
 {
     
     public TextMeshProUGUI timerText;
+    public TextMeshProUGUI scoreText;
     public float currentTime;
     public Image imageComponent;
-    private static int counter = 0;
+    public GameObject exitButton;
+    public GameObject startText;
+    private static int counter;
     private float finalTime;
     private bool doneTiming = false;
     private readonly int NUMBER_OF_GUESSES = 10;
     
+    
+    
     // Start is called before the first frame update
     void Start()
     {
-        counter = 0;
+        counter = -1;
+        exitButton.SetActive(false);
+        startText.SetActive(true);
     }
+
+    
 
     // Update is called once per frame
     void Update()
@@ -28,9 +37,13 @@ public class Timer : MonoBehaviour
             finalTime = currentTime;
             doneTiming = true;
             timerText.text = finalTime.ToString("0.00");
-        } else if (!doneTiming) {
+            scoreText.text = counter.ToString();
+            exitButton.SetActive(true);
+        } else if (!doneTiming && counter >= 0) {
+            startText.SetActive(false);
             currentTime = currentTime += Time.deltaTime;
             timerText.text = currentTime.ToString("0.00");
+            scoreText.text = counter.ToString();
         }
     }
 
