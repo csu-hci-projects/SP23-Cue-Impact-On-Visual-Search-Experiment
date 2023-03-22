@@ -4,7 +4,7 @@ using System.IO;
 using System;
 using System.Collections.Generic;
 using static Timer;
-public class RandomizeAudio : MonoBehaviour
+public class RandomizeVisual : MonoBehaviour
 {
     public string folderPath;   // path to the folder containing the images
     public string symbolToFindName;
@@ -28,17 +28,23 @@ public class RandomizeAudio : MonoBehaviour
     {
         // get all the image paths in the folder
         imagePaths = Directory.GetFiles(folderPath, "*.png");
+        
         // set the initial images for all the buttons
         //RandomizeImages();
     }
 
     void Update() {
          imageName = image.sprite.name;
+         
          if(audioOrNot == true) {
             Button[] buttons = FindObjectsOfType<Button>();
             foreach (Button button in buttons) {
             Image buttonImage = button.GetComponent<Image>();
             if(buttonImage != null && buttonImage.sprite.name == symbolToFindName2 || buttonImage != null && buttonImage.sprite.name == symbolToFindName) {
+                Outline o = button.GetComponent<Outline>();
+                if (o != null) {
+                    o.enabled = true;
+                }
                 AudioSource buttonAudio = button.GetComponent<AudioSource>();
                 if (buttonAudio != null) {
                     buttonAudio.Play();
@@ -46,7 +52,7 @@ public class RandomizeAudio : MonoBehaviour
             }
           }
           audioOrNot = false;
-         }
+         } 
          
     }
 
@@ -115,6 +121,8 @@ public class RandomizeAudio : MonoBehaviour
     public void UpdateTimer() {
         if(imageName.Equals(symbolToFindName) || imageName.Equals(symbolToFindName2)) {
             Timer.UpdateCounter();
+            Outline o = GetComponent<Outline>();
+            o.enabled = false;
         } 
     }
 }
