@@ -4,7 +4,7 @@
 We created a Unity project with the intent to determine if visual and or audio aids could help a search in a 2D virtual enviroment, and investigating the impact they can have on UI navigation. There are five scenes within the project being Menu, NoAid, AudioAid, VisualAid, and BothAid. 
 
 ## Video Overview:
-Here is a (WILL GO HERE)[link] to a video walking through and explaining the code wrote to make this project come to life. 
+Here is a [link](https://www.youtube.com/watch?v=Po372kSMsg8) to a video walking through and explaining the code wrote to make this project come to life. 
 
 ### Menu: 
 Upon opening the application you are brought to the menu, a simple interface where you can select each of the 4 search tasks and exit the application. 
