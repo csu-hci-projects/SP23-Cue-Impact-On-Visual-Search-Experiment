@@ -55,17 +55,7 @@ public class RandomizeButtonImages : MonoBehaviour
             // check if the Image is a child of a Button
             if (images[i].GetComponentInParent<Button>() != null)
             {
-                // choose a random image index that's different from the last one used
-                /*
-                int randomIndex = Random.Range(0, imagePaths.Length);
-                while (randomIndex == lastIndex)
-                {
-                    randomIndex = Random.Range(0, imagePaths.Length);
-                }
-                lastIndex = randomIndex;
-                
-                // load the image and set it as the Image's sprite
-                */
+
                 
                 int z = indexes[0];
                 indexes.RemoveAt(0);
